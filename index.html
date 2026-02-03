@@ -2,20 +2,33 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For My Cute Little Baby Pratibhaaaaaaaaaa 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Valentine 💖</title>
 
 <style>
 body {
     margin: 0;
-    padding: 0;
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(135deg, #ff9a9e, #fad0c4);
     font-family: 'Segoe UI', sans-serif;
     overflow: hidden;
     text-align: center;
 }
 
-/* PASSWORD SCREEN */
+button, input {
+    font-size: clamp(16px, 4vw, 18px);
+    padding: 12px 22px;
+    border-radius: 25px;
+    border: none;
+    margin: 8px;
+}
+
+button {
+    background: #ff4d6d;
+    color: white;
+}
+
+/* PASSWORD */
 #lock {
     position: fixed;
     inset: 0;
@@ -26,45 +39,26 @@ body {
     align-items: center;
 }
 
-input {
-    padding: 10px;
-    border-radius: 20px;
-    border: none;
-    font-size: 18px;
-    text-align: center;
-}
-
-button {
-    padding: 10px 20px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 20px;
-    background: #ff4d6d;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-/* MAIN CONTENT */
-#content {
+/* MAIN */
+#content, #yesPage {
     display: none;
-    padding-top: 30px;
+    padding: 20px;
 }
 
 img {
-    width: 200px;
-    height: 200px;
+    width: min(60vw, 200px);
+    height: min(60vw, 200px);
     border-radius: 50%;
-    border: 5px solid white;
+    border: 4px solid white;
     object-fit: cover;
 }
 
 h1 {
-    color: #fff;
-    font-size: 40px;
+    color: white;
+    font-size: clamp(24px, 7vw, 40px);
 }
 
-/* FLOATING HEARTS & ROSES */
+/* FLOATING */
 .floating {
     position: absolute;
     animation: float 6s linear infinite;
@@ -72,17 +66,17 @@ h1 {
 }
 
 @keyframes float {
-    0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
-    100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+    0% { transform: translateY(100vh); opacity: 1; }
+    100% { transform: translateY(-10vh); opacity: 0; }
 }
 
-/* RUNNING NO BUTTON */
+/* RUNNING NO */
 #no {
     position: absolute;
     background: #555;
 }
 
-/* LOVE LETTER MODAL */
+/* LOVE LETTER */
 #letterBox {
     position: fixed;
     inset: 0;
@@ -90,12 +84,12 @@ h1 {
     display: none;
     justify-content: center;
     align-items: center;
+    padding: 15px;
 }
 
 #letter {
     background: #fff0f5;
-    padding: 25px;
-    width: 80%;
+    padding: 20px;
     max-width: 400px;
     border-radius: 20px;
     text-align: left;
@@ -106,7 +100,6 @@ h1 {
     position: fixed;
     width: 6px;
     height: 6px;
-    background: transparent;
     border-radius: 50%;
     animation: explode 1s ease-out forwards;
 }
@@ -114,16 +107,34 @@ h1 {
 @keyframes explode {
     to {
         box-shadow:
-        0 -120px red,
-        85px -85px gold,
-        120px 0 hotpink,
-        85px 85px violet,
-        0 120px cyan,
-        -85px 85px lime,
-        -120px 0 orange,
-        -85px -85px yellow;
+        0 -100px red,
+        70px -70px gold,
+        100px 0 hotpink,
+        70px 70px violet,
+        0 100px cyan,
+        -70px 70px lime,
+        -100px 0 orange,
+        -70px -70px yellow;
         opacity: 0;
     }
+}
+
+/* YES PAGE */
+#yesPage {
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#yesPage h1 {
+    font-size: clamp(26px, 7vw, 45px);
+    animation: fadeIn 1.8s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
 }
 </style>
 </head>
@@ -132,7 +143,7 @@ h1 {
 
 <!-- PASSWORD -->
 <div id="lock">
-    <h1>🔐 Enter Our Relationship mei aane wali Anniversary</h1>
+    <h1>🔐 Enter Our Anniversary</h1>
     <input type="password" id="pass" placeholder="DD/MM/YYYY">
     <button onclick="unlock()">Unlock 💖</button>
 </div>
@@ -140,57 +151,78 @@ h1 {
 <!-- MAIN -->
 <div id="content">
     <audio id="music" loop>
-        <source src="music.mp3" type="audio/mpeg">
+        <source src="music.mp3">
     </audio>
 
     <img src="photo.jpg">
-    <h1>Happy Valentine’s Day Meri Ruhiiiiiiiiiiiiiiiiiiii💕</h1>
+    <h1>Happy Valentine’s Day 💕</h1>
 
-    <button onclick="openLetter()">💌 Aapke liye meri taraf se pyara sa patra </button>
+    <button onclick="openLetter()">💌 Open My Love Letter</button>
 
     <h1>Will you be my Valentine? 💘</h1>
     <button onclick="yes()">YES 😍</button>
-    <button id="no" onmouseover="run()">NO (ek baar daba ke dekho)🙈</button>
+    <button id="no" onmouseover="run()">NO 🙈</button>
+</div>
+
+<!-- YES PAGE -->
+<div id="yesPage">
+    <h1>
+        I knew you’d say YES 💖<br><br>
+        You are my forever, Pratibha 🌹<br><br>
+        — Utkarsh 💞
+    </h1>
 </div>
 
 <!-- LOVE LETTER -->
 <div id="letterBox">
     <div id="letter">
-        <h2>My Dearest Pratibhaaaaa 💖</h2>
+        <h2>My Dearest Pratibha 💖</h2>
         <p>
-        You are my favorite thought, my happiest place,
-        and my forever choice ❤️<br><br>
-        Forever yours,<br><b>Utkarsh</b> 💞
+        Loving you is my favorite thing to do every single day 🌸<br><br>
+        Forever yours,<br><b>Utkarsh</b>
         </p>
         <button onclick="closeLetter()">Close 💖</button>
     </div>
 </div>
 
 <script>
-// PASSWORD
+// MUSIC FADE-IN
+function fadeInMusic(audio) {
+    audio.volume = 0;
+    audio.play();
+    let vol = 0;
+    const fade = setInterval(() => {
+        if (vol < 1) {
+            vol += 0.02;
+            audio.volume = Math.min(vol, 1);
+        } else clearInterval(fade);
+    }, 100);
+}
+
+// UNLOCK
 function unlock() {
     if (pass.value === "25/09/2025") {
         lock.style.display = "none";
         content.style.display = "block";
-        music.play();
+        fadeInMusic(music);
     } else alert("Wrong anniversary 😜");
 }
 
-// FLOATING HEARTS & ROSES
+// FLOATING
 setInterval(() => {
     const f = document.createElement("div");
     f.className = "floating";
     f.innerHTML = Math.random() > 0.5 ? "❤️" : "🌹";
     f.style.left = Math.random() * 100 + "vw";
-    f.style.fontSize = Math.random() * 30 + 20 + "px";
+    f.style.fontSize = Math.random() * 24 + 18 + "px";
     document.body.appendChild(f);
     setTimeout(() => f.remove(), 6000);
-}, 250);
+}, 280);
 
-// RUNNING NO
+// NO BUTTON
 function run() {
-    no.style.left = Math.random() * 80 + "vw";
-    no.style.top = Math.random() * 80 + "vh";
+    no.style.left = Math.random() * 70 + "vw";
+    no.style.top = Math.random() * 70 + "vh";
 }
 
 // FIREWORKS
@@ -198,8 +230,8 @@ function fireworks() {
     for (let i = 0; i < 15; i++) {
         const fw = document.createElement("div");
         fw.className = "firework";
-        fw.style.left = Math.random() * window.innerWidth + "px";
-        fw.style.top = Math.random() * window.innerHeight + "px";
+        fw.style.left = Math.random() * innerWidth + "px";
+        fw.style.top = Math.random() * innerHeight + "px";
         document.body.appendChild(fw);
         setTimeout(() => fw.remove(), 1000);
     }
@@ -208,7 +240,10 @@ function fireworks() {
 // YES
 function yes() {
     fireworks();
-    setTimeout(() => alert("Yayyyyyyyyyyyy! I love you so so sooooo muchhhhhhhhhhhhhhhhhhhhhhhhhh Pratibhaaaaaaaaaaaaaaaaaaaa 💖🎆🥰"), 300);
+    setTimeout(() => {
+        content.style.display = "none";
+        yesPage.style.display = "flex";
+    }, 700);
 }
 
 // LETTER
