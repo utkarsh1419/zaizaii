@@ -143,7 +143,7 @@ h1 {
 
 <!-- PASSWORD -->
 <div id="lock">
-    <h1>🔐 Enter Our Anniversary</h1>
+    <h1>🔐 Enter Our RS mei aane wali Anniversary 😃</h1>
     <input type="password" id="pass" placeholder="DD/MM/YYYY">
     <button onclick="unlock()">Unlock 💖</button>
 </div>
@@ -155,9 +155,9 @@ h1 {
     </audio>
 
     <img src="photo.jpg">
-    <h1>Happy Valentine’s Day 💕</h1>
+    <h1>Happy Valentine’s Day Meri Pyari Pratibha 💕</h1>
 
-    <button onclick="openLetter()">💌 Open My Love Letter</button>
+    <button onclick="openLetter()">💌 Meri Taraf Se ek </button>
 
     <h1>Will you be my Valentine? 💘</h1>
     <button onclick="yes()">YES 😍</button>
@@ -193,7 +193,7 @@ function fadeInMusic(audio) {
     let vol = 0;
     const fade = setInterval(() => {
         if (vol < 1) {
-            vol += 0.02;
+            vol += 0.08;
             audio.volume = Math.min(vol, 1);
         } else clearInterval(fade);
     }, 100);
@@ -205,14 +205,14 @@ function unlock() {
         lock.style.display = "none";
         content.style.display = "block";
         fadeInMusic(music);
-    } else alert("Wrong anniversary 😜");
+    } else alert("hawwww aapko ye bhi nhi yaad 🥀🥀");
 }
 
 // FLOATING
 setInterval(() => {
     const f = document.createElement("div");
     f.className = "floating";
-    f.innerHTML = Math.random() > 0.5 ? "❤️" : "🌹";
+    f.innerHTML = Math.random() > 0.5 ? "❤️" : "💗";
     f.style.left = Math.random() * 100 + "vw";
     f.style.fontSize = Math.random() * 24 + 18 + "px";
     document.body.appendChild(f);
